@@ -82,8 +82,8 @@ function Parse-IP-TTL {
     }
 
     # Delete the temp files
-    Clear-Content -path * -filter ENT_found_IPs_only.csv -force
-    Clear-Content -path * -filter ENT_found_TTLs_only.csv -force
+    Remove-Item -path * -filter ENT_found_IPs_only.csv -force
+    Remove-Item -path * -filter ENT_found_TTLs_only.csv -force
 }
 
 # Run the script
