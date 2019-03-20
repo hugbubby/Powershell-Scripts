@@ -26,7 +26,7 @@
 #     to include TTL as well. This takes a *very* long time, and is intended
 #     to be used for finding hosts that may not be currently tracked by anyone
 #
-# NOTE: The default class B scanned is 192.x.x.x,
+# NOTE: The default class B scanned is 10.x.x.x,
 
 $oct1 = $oct2 = $ip = 0
 
@@ -34,8 +34,8 @@ $oct1 = $oct2 = $ip = 0
 function Class-C-Map($oct1, $oct2) {
 
     for ( $ip = 0; $ip -le 254; $ip++ ) {
-        #echo 192.$oct1.$oct2.$ip
-        ping -w 20 -n 1 192.$oct1.$oct2.$ip | sls "Reply" >> ENT_replies.txt
+        #echo 10.$oct1.$oct2.$ip
+        ping -w 20 -n 1 10.$oct1.$oct2.$ip | sls "Reply" >> ENT_replies.txt
     }
 }
 
